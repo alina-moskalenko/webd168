@@ -1,0 +1,117 @@
+* {
+  /* Reset margin and padding for all elements */
+  margin: 0;
+  padding: 0;
+  /* Use border-box model for all elements so padding and border are included in the element's total width/height */
+  box-sizing: border-box;
+}
+
+/* Basic styles for the root element and body */
+html {
+  /* Set base font size to 100%, which is 16px by default */
+  font-size: 100%;
+  /* Line height of 1.5 for readability (16px x 1.5 = 24px - 4px mg on top and bottom) */
+  line-height: 1.5;
+}
+
+body {
+  /* Apply the Google Font "Source Sans Pro" to the entire body */
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+/* Main container for the content section */
+section {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2em;
+}
+
+/* Styles for the aside (sidebar) element */
+aside {
+  flex: 1 1 25%; /* Flex Grow, Flex Shrink, Flex Basis */
+  background-color: #ededed;
+  padding: 1.25rem;
+  margin-left: 1rem;
+}
+
+aside p {
+  font-style: italic;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/* Styles for the article element */
+article {
+  flex: 1 1 65%;
+}
+
+/* Ensure images are responsive */
+img {
+  max-width: 100%;
+  height: auto;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  float: left;
+  padding-right: 1rem;
+}
+
+/* Heading styles */
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem; /* The 0.5 rem value is derived by dividing the remaining space by the context which is based by the default fount size. 8px fits within our baseline grid which is calculated from the default font size of 16px. To keep the h1 aligned with thisbaseline we subtractthe 40px, the desired height for our h1 tag minus 16px which is the default font size, and another 16px which is the font size for the line height. this leaves us with 8pixels of space. we then divide the remaining space of 8px by the default font size of 16px which results in 0.5rem. */
+  /* Added the the 0.5rem mb after the h1 tag to maintain the alignment of the baselines between the article and the aside elements becasue the way vertical spacing is calculated in relation to the baseline grid and to ensure consistancy in the flow of the text */
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+/* Paragraph styles */
+p {
+  margin-bottom: 1.5rem;
+}
+
+/* Media Queries */
+
+/* Media query for screens smaller than or equal to 768px */
+@media (max-width: 768px) {
+  /* Stack the aside and article elements vertically on small screens */
+  section {
+    flex-direction: column;
+  }
+
+  /* Move aside to the bottom by changing its order */
+  aside {
+    flex: 1 1 100%;
+    margin-left: 0;
+    width: 80%;
+    margin: 0 auto;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+  }
+
+  /* Make the article take up the full width */
+  article {
+    flex: 1 1 100%;
+  }
+}
+
+/* Media query for screens smaller than or equal to 480px (extra small screens) */
+@media (max-width: 480px) {
+  /* Decrease the font size of the main heading for smaller screens */
+  h1 {
+    font-size: 2rem;
+  }
+
+  /* Decrease the font size of subheadings for smaller screens */
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  /* Decrease the font size of paragraphs for smaller screens */
+  p {
+    font-size: 0.9rem;
+  }
+}
