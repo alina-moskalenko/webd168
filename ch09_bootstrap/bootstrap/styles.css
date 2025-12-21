@@ -1,0 +1,44 @@
+:root {
+  --bs-body-bg: #c5c5c5;
+  --bs-secondary-bg: #e0e0e0;
+  --bs-tertiary-bg: navy;
+  --bs-border: #808080;
+  --bs-color-body: black;
+  --bs-color-header-main: white;
+  --bs-font-family: 'Courier New', monospace;
+  --bs-border-width: 2px;
+  --bs-border-style: inset;
+  --bs-border-color: #808080;
+  --bs-border-color-translucent: rgba(0, 0, 0, 0.175);
+  --bs-border-radius: 0.375rem;
+}
+
+body {
+  background-color: var(--bs-body-bg);
+  color: var(--bs-color-body);
+  font-family: var(--bs-font-family);
+}
+
+h1,
+h2 {
+  background-color: var(--bs-tertiary-bg);
+  color: var(--bs-color-header-main);
+}
+
+.text-bg {
+  background-color: var(--bs-secondary-bg);
+}
+
+marquee {
+  display: block;
+  color: yellow;
+  background-color: var(--bs-tertiary-bg);
+  font-weight: bold;
+  padding: 8px;
+  border: 2px outset #808080;
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto 20px;
+  white-space: nowrap;
+  overflow: hidden;
+}
